@@ -1,0 +1,32 @@
+Alem da versao do python, cada projeto tambem tem as dependencias
+exemplo, em alguns projetos temos o pandas, outros o streamlit, outros o django
+
+
+
+comandos pip
+pip list - para ver o total de dependencias na sua maquina
+
+
+vamos limpas o pip para desinstalar todas as dependencias da sua maquina global
+pip freeze | grep -v "^-e"| xargs pip uninstall -y
+
+vai deixar o pip list limpinho
+
+agora sempre que vc for instalar algo no pip CRIE UM AMBIENTE VIRTUAL
+pra issso utilizamos o venv em cada um dos projetos
+
+python -m venv .venv
+
+
+ATIVANDO O AMBIENTE VIRTUAL ( WINDOWS )
+source .venv/Sripts/activate
+
+agora podemos instalar as dependencias em cada projeto
+para sair do ambiente 
+deactivate
+
+agora só replicar em outros projetos
+
+
+agora sempre que for mecher no projeto vc precisa rodar o ambiente virtual denovo
+source .venv/Sripts/activate

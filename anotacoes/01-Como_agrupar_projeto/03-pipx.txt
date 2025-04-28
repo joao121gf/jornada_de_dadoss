@@ -1,0 +1,9 @@
+O PIPX vai fazer a gestao das bibliotecas que eu sempre vou querer trabalhar na minha maquina
+a vantagem que separa por usuario e nao vira uma bagunca se tiver 2 usuarios no mesmo pc
+
+2 bibliotecas que iremos usar muito é o POETRY E O IPthon
+
+ 
+
+pip install pipx (GLOBALMENTE MESMO)
+
