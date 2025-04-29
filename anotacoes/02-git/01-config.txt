@@ -1,0 +1,49 @@
+Antes de começar a usar o Git, precisamos configurar o nome e o e-mail do usuário:
+
+git config --global user.name "Seu Nome"
+git config --global user.email "seu.email@exemplo.com"
+
+
+
+git init
+git add nome-arquivo.py
+
+pra salvar:
+
+git commit -m "Adiciona o arquivo main.py com um simples print"
+
+para restaurar e pegar o ultimo commit do arquivo
+git restore main.py
+
+
+
+git restore --staged main.py: Remove o arquivo main.py da Staging Area, 
+retornando-o ao Working Directory sem as mudanças serem cometidas. 
+Ele volta ao estado antes de ser adicionado à Staging Area.
+
+ele nao remove nenhuma linha nova do projeto diferente do restore direto
+
+
+
+VOLTANDO PARA ANALISAR COMMITS PASSADOS
+git checkout hash 2102100210210
+
+
+
+criando novas branchs 
+git branch nova-branch
+
+faça as alteracoes nessa branch sem impactar a main
+depois de o merge juntanto tudo isso
+git merge nova-branch
+depois deleta a branch pois nao precisa mais dela
+
+dica: sempre faça sua merge o mais rapido possivel, pois o ultimo dev a fazer o
+merge enfrentará muitos bugs juntando tudo
+
+
+caso voce queira começar do zero em algum commit inves de resetar tudo 
+crie uma outra branch a partir daquele commit
+git checkout -b experiment <hash do commit>
+
+
