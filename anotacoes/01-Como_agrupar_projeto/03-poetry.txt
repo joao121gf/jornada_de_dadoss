@@ -1,0 +1,26 @@
+Biblioteca
+para separar melhor as dependencias e bibliotecas
+
+primeiro 
+poetry config virtualenvs.in-project true
+esse comando diz ao poetry para tomar conta também do ambiente virtual
+
+
+agora criando o projeto
+poetry new nome_pasta
+
+ele cria junto o readme, pasta do projeto principal, testes e pyproject
+
+
+defina a versao local
+pyenv local 3.12.1
+
+
+diga agora tambem ao poetry que quer usar essa versao 
+poetry env use 3.12.1
+
+com isso a gente nao precisa criar nosso ambiente virtual
+o proprio poetry ja faz tudo isso e entra no ambiente virtual
+
+para instalar as dependencais agora rode:
+poetry add django
