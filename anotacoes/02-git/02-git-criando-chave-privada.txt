@@ -1,0 +1,48 @@
+Configurando Autenticação SSH para GitHub
+A autenticação SSH é uma forma segura de conectar seu repositório local ao GitHub, sem precisar inserir seu nome de usuário e senha toda vez que fizer um push ou pull. Aqui está o passo a passo para criar uma chave SSH, adicionar essa chave à sua conta do GitHub, e usá-la para autenticação.
+
+Passo a Passo para Criar uma Chave SSH
+Gerar uma Nova Chave SSH:
+
+No terminal, execute o seguinte comando:
+
+ssh-keygen -t rsa
+O que esse comando faz:
+
+ssh-keygen: Este comando é usado para gerar um novo par de chaves SSH.
+-t rsa: Especifica o tipo de chave a ser gerado, que neste caso é RSA (um dos tipos mais comuns e seguros).
+O que ele cria:
+
+Este comando gera dois arquivos:
+id_rsa: A chave privada (não compartilhe este arquivo com ninguém).
+id_rsa.pub: A chave pública (essa é a chave que você vai adicionar ao GitHub).
+
+
+
+Verificando a Chave SSH Gerada:
+
+Para ver o conteúdo da chave pública (aquela que você vai compartilhar com o GitHub), execute o seguinte comando:
+
+cat ~/.ssh/id_rsa.pub
+O que isso faz: Mostra o conteúdo do arquivo id_rsa.pub no terminal. Este conteúdo é a chave pública que você precisa copiar e adicionar à sua conta do GitHub.
+Resultado esperado: Algo parecido com isso será exibido:
+ssh-rsa AAAAB3... rest of the key ... your.email@example.com
+
+
+
+Adicionar a Chave SSH ao GitHub:
+
+Agora, com a chave pública copiada, vá até sua conta do GitHub e siga os passos:
+
+Vá para Settings (Configurações).
+Na seção SSH and GPG keys, clique em New SSH key.
+Cole a chave pública que você copiou do terminal no campo Key.
+Dê um nome à chave para identificá-la facilmente (por exemplo, "Meu PC").
+Clique em Add SSH key.
+Verificar a Conexão SSH com o GitHub:
+
+Para garantir que tudo está configurado corretamente, você pode testar a conexão SSH com o GitHub:
+
+ssh -T git@github.com
+O que esperar: Se tudo estiver configurado corretamente, você verá uma mensagem como:
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
