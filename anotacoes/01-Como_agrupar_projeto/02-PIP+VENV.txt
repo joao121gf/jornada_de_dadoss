@@ -30,3 +30,5 @@ agora só replicar em outros projetos
 
 agora sempre que for mecher no projeto vc precisa rodar o ambiente virtual denovo
 source .venv/Sripts/activate
+
+USE O POETRY NESSA PARTE

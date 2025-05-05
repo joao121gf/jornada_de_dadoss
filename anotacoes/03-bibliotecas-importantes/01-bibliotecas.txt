@@ -1,0 +1,87 @@
+flakes8 - essa biblioteca analisa linha por linha se o codigo está de acordo com a pep 8
+poetry run flake8 main.py
+
+black - faz a mesma coisa porem sozinho
+poetry add --dev black
+poetry run black main.py
+
+
+blue - é meio que os 2 juntos, talvez seja melhor
+
+
+black
+isort
+flake8
+bandit
+
+antes instale um precommit para garantir que sempre antes do commit vc rode esses 3
+é importante colocar o bandit também que é de segurança
+
+
+cria um arquivo .flake8 para eles nao ficarem brigando entre si
+
+
+agora faça o precommit para rodar tudo antes do commit
+
+esse codigo roda os 3, porem é bom fazer um pre commit 
+para nao ficar digitando isso sempre
+
+no pyproject.toml coloque
+[tool.isort]
+profile = "black"
+
+[tool.taskipy.tasks]
+format = """
+isort main.py
+black main.py
+flake8 main.py
+"""
+
+
+fazendo o precommit:
+poetry add pre commit
+
+agora coloque as bibiliotecas que vc quiser
+
+
+no pre-commit-config.yaml voce pode colocar:
+
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: detect-private-key
+      - id: check-added-large-files
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 24.1.1
+    hooks:
+      - id: black
+        language_version: python3.11
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        name: isort (python)
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.0.0
+    hooks:
+      - id: flake8
+
+
+git add .pre-commit.....
+e comita
+
+ele vai modificar o arquivo talvez
+
+vc adciona denovo e comita denovo
+
+
+
+
+
